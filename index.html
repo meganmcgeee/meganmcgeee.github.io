@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <title>Megan McGee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" media="all" href="css/setup.css">
+  <link rel="stylesheet" media="all" href="css/says.css">
+  <link rel="stylesheet" media="all" href="css/reply.css">
+  <link rel="stylesheet" media="all" href="css/typing.css">
+  <link rel="stylesheet" media="all" href="css/input.css">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Lobster" rel="stylesheet">
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -31,15 +44,16 @@
 </head>
 <!-- Google Analytics -->
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  (function (i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date(); a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-80077052-1', 'auto');
   ga('send', 'pageview');
-
 </script>
+
 <body>
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -47,30 +61,107 @@
 
     <div class="row">
       <div class="nine columns" style="margin-top: 3%">
-        <h4>Megan McGee.</h4>
-        <p>Megan McGee is a student of brand experience strategy and a web developer. She's passionate about engaging fans in the brands that they love digitally (via social media) and IRL (activations, conventions, and fantastic parties).
-        <p>Four years of experience as a web app developer have made her great at scraping people and text data from digital spaces where people discuss events and studying social psychology and qualitative research equipped her to analyze it. Some call this market research. <br>She calls it fun.</p>
-        <p> As of late, she has been part of a pop-culture fan experience strategy firm, <a href="http://powerlevelproductions.com">Power Level Productions</a>. On the weekends, she's part of the Los Angeles Chargers Street Team where she gets to work very closely with fans and talent.</p>
-         <a href="mailto:megan@makeapps.io">Get in touch</a> for collaborations and/or coffee.</p></span></div><br />
-       <div></div>   
-    <!-- <div class="container">     
-      <div class="row"> -->
-        <div class="three columns">
-          <img src="img/me.jpg">
-        </div>
-      </div>
-    </div>     
-  </div>
+        <!-- the script -->
+        <script src="./js/bubbles.js"></script>
+        
+        <!-- placeholder for where the chatbox is going to be rendered -->
+        <div id="chat"></div>
+        
+        <script>
+          // CONVERSATION FUNCTIONS HOWTO: SEE LINE 85
+          // this is the most basic conversation JSON.
+          var convo = {
+            "ice": {	// default conversation block for the bot to start, this key is required.
+              "says": [ // you can have array of text bubbles here
+                "⚗️🔥💥",
+                "I'm Megan McGee.",
+                "I <3 building things for the web.",
+                "I also throw fun parties",
+                "on social media channels. I also design and produce parties around things like that.",
+                "",
+                "Are you a robot or an alien?"
+              ],
+              "reply": [ // this is an array of possible answers that user can pick. 3 or less options recommended.
+                {
+                  "question": "Robot",	// this is the text label for one of the options
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script type="text/javascript">
-    function unhide(divID) {
-      const item = document.getElementById(divID);
-      if (item) {
-        item.className=(item.className=='hidden')?'unhidden':'hidden';
+
+
+                  // instead of the key name for conversation block you can simply pass a name of the function you want to call
+                  // it can not accept any parameters at this moment.
+                  // this function has to be declared on this very document page
+                  // this is for security.
+                  // see line 91 for this function.
+                  "answer": "bananaFunction",	// this is the reference for next block in this conversation (see below)
+
+
+
+
+                },
+                {
+                  "question": "Alien", // users can see this text and click it
+                  "answer": "ice-cream", // it will take them to the next conversation block
+                }
+              ]
+            },
+            "ice-cream": {	// this is another conversation block, to which the chat bot can be sent (see above ^^)
+              "says": [ // you can have array of text bubbles here
+                "👽",
+              ],
+              "reply": [ // this is an array of possible answers that user can pick. 3 or less options recommended.
+                {
+                  "question": "Start Over",	// this is the text label for one of the options
+                  "answer": "ice",	// you can sent the user back to the original (first) conversation block
+                },
+              ]
+            }
+          }
+          // set up the chatbot script
+          var givemeBubbles = new Bubbles(
+            document.getElementById('chat'), 	// attach chatbot to placeholder above ^^
+            "givemeBubbles"										// you need to pass the name of the constructor variable that evokes Bubble function here
+          );
+          // pass JSON to your function and you're done!
+          givemeBubbles.talk(convo);
+          // this function is called when user asks for banana
+          bananaFunction = function () {
+            alert("🤖");
+            givemeBubbles.talk(convo, "ice"); // the conversation can be easily restarted from here.
+          }
+        </script>
+        </div>
+        </div>
+        
+        </span>
+      </div>
+        <br />
+        <div></div>
+        <!-- <div class="container">     
+        <div class="row"> -->
+        <div class="three columns">
+          <!-- <img src="img/me.jpg"> -->
+          <!-- <h4>Megan McGee.</h4>
+          <p>Hi, I'm a brand experience strategist and a web developer. I study cult followings and brands that people get obsessed with
+            on social media channels. I also design and produce parties around things like that.
+            <p>web app development: 4 years have made me great at scraping people and text data from digital spaces where people discuss
+              events and things they love. Studying social psychology and qualitative research so I can analyze it.</p>
+            <p> As of late, she has been part of a pop-culture fan experience strategy firm,
+              <a href="http://www.powerlevelproductions.com">Power Level Productions</a>. On the weekends, I'm probably lifting heavy weights part of the Los Angeles Chargers Street
+              Team where she gets to work very closely with fans and talent.</p>
+            <a href="mailto:meganpmcgee@gmail.com">Get in touch</a> for collaborations and/or coffee.</p> -->
+        </div>
+        
+    </div>
+
+    <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript">
+      function unhide(divID) {
+        const item = document.getElementById(divID);
+        if (item) {
+          item.className = (item.className == 'hidden') ? 'unhidden' : 'hidden';
+        }
       }
-    }
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+  </html>
