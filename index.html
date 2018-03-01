@@ -73,30 +73,15 @@
           var convo = {
             "ice": {	// default conversation block for the bot to start, this key is required.
               "says": [ // you can have array of text bubbles here
-                "⚗️🔥💥",
-                "I'm Megan McGee.",
-                "I <3 building things for the web.",
-                "I also throw fun parties",
-                "on social media channels. I also design and produce parties around things like that.",
-                "",
+                "Hello :-)",
+                "Megan here.",
+                "I design and code bots for the web.",
                 "Are you a robot or an alien?"
               ],
               "reply": [ // this is an array of possible answers that user can pick. 3 or less options recommended.
                 {
                   "question": "Robot",	// this is the text label for one of the options
-
-
-
-                  // instead of the key name for conversation block you can simply pass a name of the function you want to call
-                  // it can not accept any parameters at this moment.
-                  // this function has to be declared on this very document page
-                  // this is for security.
-                  // see line 91 for this function.
                   "answer": "bananaFunction",	// this is the reference for next block in this conversation (see below)
-
-
-
-
                 },
                 {
                   "question": "Alien", // users can see this text and click it
@@ -106,7 +91,8 @@
             },
             "ice-cream": {	// this is another conversation block, to which the chat bot can be sent (see above ^^)
               "says": [ // you can have array of text bubbles here
-                "👽",
+                "👽 http://www.github.com/meganmcgeee",
+                // "href": "dev.html"
               ],
               "reply": [ // this is an array of possible answers that user can pick. 3 or less options recommended.
                 {
@@ -117,42 +103,19 @@
             }
           }
           // set up the chatbot script
-          var givemeBubbles = new Bubbles(
+          var startChat = new Bubbles(
             document.getElementById('chat'), 	// attach chatbot to placeholder above ^^
-            "givemeBubbles"										// you need to pass the name of the constructor variable that evokes Bubble function here
+            "startChat"										// you need to pass the name of the constructor variable that evokes Bubble function here
           );
           // pass JSON to your function and you're done!
-          givemeBubbles.talk(convo);
+          startChat.talk(convo);
           // this function is called when user asks for banana
           bananaFunction = function () {
             alert("🤖");
-            givemeBubbles.talk(convo, "ice"); // the conversation can be easily restarted from here.
+            startChat.talk(convo, "ice"); // the conversation can be easily restarted from here.
           }
         </script>
-        </div>
-        </div>
-        
-        </span>
-      </div>
-        <br />
-        <div></div>
-        <!-- <div class="container">     
-        <div class="row"> -->
-        <div class="three columns">
-          <!-- <img src="img/me.jpg"> -->
-          <!-- <h4>Megan McGee.</h4>
-          <p>Hi, I'm a brand experience strategist and a web developer. I study cult followings and brands that people get obsessed with
-            on social media channels. I also design and produce parties around things like that.
-            <p>web app development: 4 years have made me great at scraping people and text data from digital spaces where people discuss
-              events and things they love. Studying social psychology and qualitative research so I can analyze it.</p>
-            <p> As of late, she has been part of a pop-culture fan experience strategy firm,
-              <a href="http://www.powerlevelproductions.com">Power Level Productions</a>. On the weekends, I'm probably lifting heavy weights part of the Los Angeles Chargers Street
-              Team where she gets to work very closely with fans and talent.</p>
-            <a href="mailto:meganpmcgee@gmail.com">Get in touch</a> for collaborations and/or coffee.</p> -->
-        </div>
-        
-    </div>
-
+      <footer><a href="http://www.twitter.com/meganmcgeeee">@meganmcgeeee</a></footer>
     <!-- End Document
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script type="text/javascript">

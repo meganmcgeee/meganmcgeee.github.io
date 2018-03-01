@@ -10,9 +10,9 @@
 	max-width: 65%;
 }
 .bubble.reply.say {
-/* 
+
   min-width: 350px;
- */
+
 }
 .bubble.reply .bubble-content {
 	transition: all 200ms;
