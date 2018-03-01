@@ -103,16 +103,16 @@
             }
           }
           // set up the chatbot script
-          var startChat = new Bubbles(
+          var giveMeBubbles = new Bubbles(
             document.getElementById('chat'), 	// attach chatbot to placeholder above ^^
-            "startChat"										// you need to pass the name of the constructor variable that evokes Bubble function here
+            "giveMeBubbles"										// you need to pass the name of the constructor variable that evokes Bubble function here
           );
           // pass JSON to your function and you're done!
-          startChat.talk(convo);
+          giveMeBubbles.talk(convo);
           // this function is called when user asks for banana
           bananaFunction = function () {
             alert("🤖");
-            startChat.talk(convo, "ice"); // the conversation can be easily restarted from here.
+            giveMeBubbles.talk(convo, "ice"); // the conversation can be easily restarted from here.
           }
         </script>
       <footer>
