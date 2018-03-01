@@ -249,6 +249,6 @@ function prepHTML(options) {
 
 }
 
-// exports for es6
-exports.Bubbles = Bubbles
-exports.prepHTML = prepHTML
+// // exports for es6
+// exports.Bubbles = Bubbles
+// exports.prepHTML = prepHTML
