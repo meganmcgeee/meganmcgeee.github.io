@@ -75,13 +75,14 @@
               "says": [ // you can have array of text bubbles here
                 "Hello :-)",
                 "Megan here.",
-                "I design and code bots for the web.",
+                "I am a software eng turned product manager.",
+                "I work on two products, Aubrie.ai, and Optimus.ai for a company called Datumix, Inc.",
                 "Are you a robot or an alien?"
               ],
               "reply": [ // this is an array of possible answers that user can pick. 3 or less options recommended.
                 {
                   "question": "Robot",	// this is the text label for one of the options
-                  "answer": "bananaFunction",	// this is the reference for next block in this conversation (see below)
+                  "answer": "robotAnswer",	// this is the reference for next block in this conversation (see below)
                 },
                 {
                   "question": "Alien", // users can see this text and click it
@@ -99,6 +100,12 @@
                   "question": "Start Over",	// this is the text label for one of the options
                   "answer": "ice",	// you can sent the user back to the original (first) conversation block
                 },
+              ],
+              "reply": [ // this is an array of possible answers that user can pick. 3 or less options recommended.
+                {
+                  "question": "Start Over",	// this is the text label for one of the options
+                  "answer": "ice",	// you can sent the user back to the original (first) conversation block
+                },
               ]
             }
           }
@@ -110,12 +117,14 @@
           // pass JSON to your function and you're done!
           giveMeBubbles.talk(convo);
           // this function is called when user asks for banana
-          bananaFunction = function () {
+          robotAnswer = function () {
             alert("🤖");
             giveMeBubbles.talk(convo, "ice"); // the conversation can be easily restarted from here.
           }
         </script>
       <footer>
+          <a href="http://www.datumix.io">Datumix, Inc.</a>
+        <a href="http://www.aubrie.ai">Aubrie.ai</a>
         <a href="http://www.twitter.com/meganmcgeeee">@meganmcgeeee</a>
       </footer>
     <!-- End Document
