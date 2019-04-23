@@ -8,7 +8,7 @@ function Bubbles(container, self, options) {
   sidePadding = options.sidePadding || 6 // padding on both sides of chat bubbles
   inputCallbackFn = options.inputCallbackFn || false // should we display an input field?
 
-  var standingAnswer = "ice" // remember where to restart convo if interrupted
+  var standingAnswer = "greeting" // remember where to restart convo if interrupted
 
   var _convo = {} // local memory for conversation JSON object
   //--> NOTE that this object is only assigned once, per session and does not change for this
