@@ -1,12 +1,13 @@
 body{
-    margin: 3em;
-    /* font-family: 'EB Garamond', serif !important; */
+   font-family: 'Arimo', sans-serif !important;
 }
 
 h1{
     font-style: italic;
     color:teal;
+    font-family: 'Space Mono', sans-serif !important;
 }
+
 
 .container {
     max-width: 960px;
