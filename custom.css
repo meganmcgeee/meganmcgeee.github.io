@@ -1,11 +1,9 @@
 body{
-   font-family: 'Arimo', sans-serif !important;
+   font-family: 'Arimo', sans-serif;
 }
 
 h1{
-    font-style: italic;
-    color:teal;
-    font-family: 'Space Mono', sans-serif !important;
+    font-family: 'Space Mono', sans-serif;
 }
 
 
