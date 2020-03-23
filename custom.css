@@ -6,6 +6,9 @@ h1{
     font-family: 'Space Mono', sans-serif;
 }
 
+a{
+  color: #33B3A6
+}
 
 .container {
     max-width: 960px;
@@ -28,7 +31,9 @@ h1{
     color: #fff;
     text-decoration: none;
   }
-  
+  .bg-pink{
+    background-color: #f4c2c2;
+  }
   /*
    * Dummy devices (replace them with your own or something else entirely!)
    */
