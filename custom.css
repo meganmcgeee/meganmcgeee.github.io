@@ -1,9 +1,14 @@
 body{
-   font-family: 'Arimo', sans-serif;
+   font-family: 'Space Mono', sans-serif;
+   
 }
 
 h1{
     font-family: 'Space Mono', sans-serif;
+    font-size: 28px !important;
+}
+p{
+  font-size: 18px !important;
 }
 
 a{
