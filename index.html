@@ -8,38 +8,80 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Megan McGee</title>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">    
+    <link href='https://fonts.googleapis.com/css?family=Sacramento:400' rel='stylesheet' type='text/css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <style>
+  .neonText {
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+}
+
+h1 {
+  font-size: 4.2rem;    
+}
+
+/* Flickering animation */
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #FF00FF,
+      0 0 80px #FF00FF,
+      0 0 90px  #FF00FF,
+      0 0 100px #FF00FF,
+      0 0 150px #FF00FF;
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+
+/* Additional styling */
+  
+h2 {
+ font-size: 1.8rem;
+}
+h3{
+  font-family: "Sacramento", sans-serif;
+}
+.container {
+  margin-top: 20vh;
+}
+
 body {
-  padding: 20px;
-  background:#051DB5;
+  font-size: 18px;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #010a01;
+}  
+
+h1, h2, h3 {
+  text-align: center;
+  font-weight: 400;
 }
 
-main {
-  color:white;
-  height: 500px;
-  width: 60%;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  resize: both;
-  overflow: auto;
-  font-family: 'Inconsolata', sans-serif;
-}
-
-main div {
-  width: 50%;
-  resize: both;
-  overflow: auto;
-}
 </style>
 </head>
 <body>
     <main>
-        <div class="inner-container"id="typing"></div>
+        <div class="inner-container">
+          <div class="container">
+            <h1 class="neonText">
+                brb
+            </h1>
+            <h2 class="neonText">making something cool</h2> 
+            <h3 class="neonText">- Megan McGee</h3>
+        
+         </div>
+        </div>
     </main>
 
        <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -50,19 +92,6 @@ main div {
       gtag('js', new Date());
 
       gtag('config', 'UA-80077052-1');
-    </script>
-    <script>
-      var i = 0;
-var txt = 'brb, making something cool...'; /* The text */
-var speed = 50; /* The speed/duration of the effect in milliseconds */
-
-window.onload = function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("typing").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
     </script>
 </body>
 </html>
