@@ -1,40 +1,48 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="utf-8">
+ <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Megan McGee</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Arimo|Space+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">    
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-</head>
 <style>
-   
-</style>
-<body style="padding-top:em;text-align: center">
-  <div class="container w-100" >
+body {
+  padding: 20px;
+  background:#051DB5;
+}
 
-    <h1 style="font-size: 1em;margin-bottom:100px" class="mt-3">Megan McGee<br> web engineer +<br> brand strategy</h3>
-    <div class="contain-me"style="display: flex;">
-     
-      <p style="opacity:1 !important;
-      font-size: .8EM;
-      MARGIN-right: .6EM;text-align:left">I've been building e-commerce products for 8 years and specialize in the creative strategy for luxury brands selling on the web. I've worked in markets around the globe to build out customer-centric high-conversion online shopping experiences. I'm fluent in Javascript, user experience design and brand story-telling.
-     <br><br>
-     In 2020 after the IRL retail-ocalypse, I joined <a href="https://thegoodagency.co"> The Good Agency</a> and work with apparel online retail clients on web engineering, brand strategy, conversion optimization, and more.</p>
-       <img style="width: 30%;
-       height: 20%;" src="megan.jpg">
-    </div>
-     
-  
-                   
-    </div>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+main {
+  color:white;
+  height: 500px;
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  overflow: auto;
+  font-family: 'Inconsolata', sans-serif;
+}
+
+main div {
+  width: 50%;
+  resize: both;
+  overflow: auto;
+}
+</style>
+</head>
+<body>
+    <main>
+        <div class="inner-container"id="typing"></div>
+    </main>
+
+       <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80077052-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -43,7 +51,18 @@
 
       gtag('config', 'UA-80077052-1');
     </script>
-</div>
-<img src="instagram.png" style="height:20px; width:20px;"/>
+    <script>
+      var i = 0;
+var txt = 'brb, making something cool...'; /* The text */
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+window.onload = function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("typing").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+    </script>
 </body>
 </html>
