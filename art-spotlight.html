@@ -1,0 +1,43 @@
+<body>
+
+<div class="light"></div>
+<a   style="color:white; z-index:10000" href="art-lightson.html">
+ hey over here click me
+really hello
+</a>
+</body>
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  bix-sizing: border-box;
+}
+body {
+  position: relative;
+  height: 100vh;
+  background-color: #fff;
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/Cyberpunk-Image-HD.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.light {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background: radial-gradient(circle at 50% 50%, transparent 0%, #000 30%);
+}
+</style>
+<script>
+    document.addEventListener('mousemove', (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+  const light = document.querySelector('.light');
+  light.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent 0%, #000 30%)`;
+});
+</script>
